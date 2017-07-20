@@ -4,6 +4,14 @@
 #
 #------------------#
 
-- platform: fitbit
-  monitored_resources:
-    "activities/tracker/calories"
+# - platform: fitbit
+#   monitored_resources:
+#     - "activities/tracker/calories"
+#     - "sleep/awakeningsCount"
+#     - "sleep/efficiency"
+#     - "sleep/minutesAfterWakeup"
+#     - "sleep/minutesAsleep"
+#     - "sleep/minutesAwake"
+#     - "sleep/minutesToFallAsleep"
+#     - "sleep/startTime"
+#     - "sleep/timeInBed"

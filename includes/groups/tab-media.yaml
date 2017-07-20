@@ -1,0 +1,4 @@
+media:
+  view: yes
+  icon: mdi:play-circle
+  entities:
