@@ -1,0 +1,17 @@
+#------------------#
+#
+# Dark Sky
+#
+#------------------#
+
+- platform: darksky
+  api_key: !secret darksky_key
+  monitored_conditions:
+    - summary
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - wind_speed
+    - hourly_summary
+    - daily_summary

@@ -1,0 +1,15 @@
+#Sensors
+sensor.dark_sky_summary:
+  friendly_name: "Today"
+sensor.dark_sky_precip_type:
+  friendly_name: "Precip Type"
+sensor.dark_sky_precip_probability:
+  friendly_name: "Chance of Rain"
+sensor.dark_sky_temperature:
+  friendly_name: "Temperature"
+sensor.dark_sky_wind_speed:
+  friendly_name: "Wind"
+sensor.dark_sky_hourly_summary:
+  friendly_name: "Tomorrow"
+sensor.dark_sky_daily_summary:
+  friendly_name: "Rest of Week"
