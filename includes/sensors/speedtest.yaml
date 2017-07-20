@@ -1,0 +1,11 @@
+#------------------#
+#
+# Speedtest
+#
+#------------------#
+
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload

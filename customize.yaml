@@ -1,8 +1,14 @@
+#Tabs
+group.default_view:
+  order: "1"
+group.media:
+  order: "2"
+group.info:
+  order: "3"
+
 #Sensors
 sensor.dark_sky_summary:
   friendly_name: "Today"
-sensor.dark_sky_precip_type:
-  friendly_name: "Precip Type"
 sensor.dark_sky_precip_probability:
   friendly_name: "Chance of Rain"
 sensor.dark_sky_temperature:
@@ -13,3 +19,11 @@ sensor.dark_sky_hourly_summary:
   friendly_name: "Tomorrow"
 sensor.dark_sky_daily_summary:
   friendly_name: "Rest of Week"
+sensor.speedtest_download:
+  friendly_name: "Download"
+sensor.speedtest_upload:
+  friendly_name: "Upload"
+sensor.speedtest_ping:
+  friendly_name: "Ping"  
+sensor.tracker_calories:
+  friendly_name: "Calories"

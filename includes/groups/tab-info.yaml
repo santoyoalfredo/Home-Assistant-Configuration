@@ -1,0 +1,35 @@
+info:
+  view: yes
+  icon: mdi:information
+  entities:
+    - group.network
+    - group.system
+
+# fitbit:
+#   name: Fitbit
+#   entities:
+#     - sensor.tracker_calories
+#     - sensor.sleep_awakeningsCount
+#     - sensor.sleep_efficiency
+#     - sensor.sleep_minutesAfterWakeup
+#     - sensor.sleep_minutesAsleep
+#     - sensor.sleep_minutesAwake
+#     - sensor.sleep_minutesToFallAsleep
+#     - sensor.sleep_startTime
+#     - sensor.sleep_timeInBed
+
+network:
+  name: Network
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+
+system:
+  name: System
+  entities:
+    - sensor.cpu_use
+    - sensor.ram_use
+    - sensor.disk_use_c
+    - sensor.last_boot
+    - sensor.since_last_boot
