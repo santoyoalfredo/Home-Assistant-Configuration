@@ -5,5 +5,7 @@
 # Ignore private files
 *.log
 *.db
+fitbit.conf
+secrets.yaml
 .HA_VERSION
 .uuid

@@ -1,0 +1,9 @@
+#------------------#
+#
+# Fitbit
+#
+#------------------#
+
+- platform: fitbit
+  monitored_resources:
+    "activities/tracker/calories"

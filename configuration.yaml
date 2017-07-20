@@ -12,7 +12,7 @@ homeassistant:
   time_zone: America/New_York
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
@@ -36,7 +36,7 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -50,9 +50,8 @@ logbook:
 # Track the sun
 sun:
 
-# Weather Prediction
-sensor:
-  platform: yr
+# Merge List
+sensor: !include_dir_merge_list includes/sensors
 
 # Text to speech
 tts:
