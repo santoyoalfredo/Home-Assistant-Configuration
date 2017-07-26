@@ -2,3 +2,4 @@ media:
   view: yes
   icon: mdi:play-circle
   entities:
+    - media_player.chromecast

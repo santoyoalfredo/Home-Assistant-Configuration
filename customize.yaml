@@ -1,4 +1,4 @@
-#Tabs
+#Views
 group.default_view:
   order: "1"
 group.media:
@@ -6,20 +6,25 @@ group.media:
 group.info:
   order: "3"
 
+#Groups
+group.timeanddate:
+  order: "4"
+group.today:
+  order: "5"
+group.devices:
+  order: "6"
+group.threeday:
+  order: "7"
+
+group.network_speed:
+  order: "8"
+group.system:
+  order: "9"
+group.network_devices:
+  order: "10"
+
 #Sensors
-sensor.dark_sky_summary:
-  friendly_name: "Today"
-sensor.dark_sky_precip_probability:
-  friendly_name: "Chance of Rain"
-sensor.dark_sky_temperature:
-  friendly_name: "Temperature"
-sensor.dark_sky_wind_speed:
-  friendly_name: "Wind"
-sensor.dark_sky_hourly_summary:
-  friendly_name: "Tomorrow"
-sensor.dark_sky_daily_summary:
-  friendly_name: "Rest of Week"
-sensor.disk_use_c:
+sensor.disk_use_:
   friendly_name: "Disk Use"
 sensor.speedtest_download:
   friendly_name: "Download"
