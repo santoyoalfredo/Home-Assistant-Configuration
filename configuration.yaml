@@ -52,7 +52,10 @@ logbook:
 # Track the sun
 #sun:
 
+# Device Tracking
 device_tracker: !include includes/nmap.yaml
+
+notify: !include includes/notifications.yaml
 
 # Merge List
 sensor: !include_dir_merge_list includes/sensors

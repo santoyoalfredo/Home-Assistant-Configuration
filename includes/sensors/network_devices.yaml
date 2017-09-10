@@ -1,0 +1,73 @@
+#------------------#
+#
+# Network Devices
+#
+#------------------#
+
+- platform: template
+  sensors:
+    network_devices_amazonfiretv:
+      value_template: '{% if is_state("device_tracker.amazonfiretv", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.amazonfiretv.attributes.icon }}'
+      friendly_name: 'Amazon Fire TV'
+      entity_id: device_tracker.amazonfiretv
+    network_devices_chromecast:
+      value_template: '{% if is_state("device_tracker.chromecast", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.chromecast.attributes.icon }}'
+      friendly_name: 'Google Chromecast'
+      entity_id: device_tracker.chromecast
+    network_devices_laptop:
+      value_template: '{% if is_state("device_tracker.laptop", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.laptop.attributes.icon }}'
+      friendly_name: 'HP Pavilion'
+      entity_id: device_tracker.laptop
+    network_devices_laptop2:
+      value_template: '{% if is_state("device_tracker.laptop2", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.laptop2.attributes.icon }}'
+      friendly_name: 'HP Notebook'
+      entity_id: device_tracker.laptop2
+    network_devices_n3ds:
+      value_template: '{% if is_state("device_tracker.n3ds", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.n3ds.attributes.icon }}'
+      friendly_name: 'Nintendo 3DS'
+      entity_id: device_tracker.n3ds
+    network_devices_new3ds:
+      value_template: '{% if is_state("device_tracker.new3ds", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.new3ds.attributes.icon }}'
+      friendly_name: 'New Nintendo 3DS'
+      entity_id: device_tracker.new3ds
+    network_devices_phone:
+      value_template: '{% if is_state("device_tracker.phone", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.phone.attributes.icon }}'
+      friendly_name: 'Samsung Galaxy J7'
+      entity_id: device_tracker.phone
+    network_devices_phone2:
+      value_template: '{% if is_state("device_tracker.phone2", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.phone2.attributes.icon }}'
+      friendly_name: 'Samsung Galaxy Avant'
+      entity_id: device_tracker.phone2
+    network_devices_ps4:
+      value_template: '{% if is_state("device_tracker.ps4", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.ps4.attributes.icon }}'
+      friendly_name: 'PlayStation 4'
+      entity_id: device_tracker.ps4
+    network_devices_psvita:
+      value_template: '{% if is_state("device_tracker.psvita", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.psvita.attributes.icon }}'
+      friendly_name: 'PlayStation Vita'
+      entity_id: device_tracker.psvita
+    network_devices_switch:
+      value_template: '{% if is_state("device_tracker.switch", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.switch.attributes.icon }}'
+      friendly_name: 'Nintendo Switch'
+      entity_id: device_tracker.switch
+    network_devices_tablet:
+      value_template: '{% if is_state("device_tracker.tablet", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.tablet.attributes.icon }}'
+      friendly_name: 'Asus Nexus 7'
+      entity_id: device_tracker.tablet
+    network_devices_wiiu:
+      value_template: '{% if is_state("device_tracker.wiiu", "home") %}Online{% endif %}'
+      icon_template: '{{ states.device_tracker.wiiu.attributes.icon }}'
+      friendly_name: 'Nintendo WiiU'
+      entity_id: device_tracker.wiiu

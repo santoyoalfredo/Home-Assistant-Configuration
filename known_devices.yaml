@@ -1,5 +1,5 @@
 
-firetv:
+amazonfiretv:
   hide_if_away: true
   icon: mdi:amazon
   mac: !secret firetv_mac
@@ -7,6 +7,69 @@ firetv:
   picture:
   track: true
   vendor: Amazon Technologies Inc.
+
+chromecast:
+  hide_if_away: true
+  icon: mdi:google-chrome
+  mac: !secret chromecast_mac
+  name: Google Chromecast
+  picture:
+  track: true
+  vendor: Google, Inc.
+
+laptop:
+  hide_if_away: true
+  icon: mdi:laptop-windows
+  mac: !secret laptop_mac
+  name: HP Pavilion
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+laptop2:
+  hide_if_away: true
+  icon: mdi:laptop-windows
+  mac: !secret laptop2_mac
+  name: HP Notebook
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+n3ds:
+  hide_if_away: true
+  icon: mdi:gamepad-variant
+  mac: !secret 3ds_mac
+  name: Nintendo 3DS
+  picture:
+  track: true
+  vendor: Nintendo Co., Ltd.
+
+new3ds:
+  hide_if_away: true
+  icon: mdi:gamepad-variant
+  mac: !secret new3ds_mac
+  name: New Nintendo 3DS
+  picture:
+  track: true
+  vendor: Nintendo Co., Ltd.
+
+phone:
+  hide_if_away: true
+  icon: mdi:cellphone-android
+  mac: !secret phone_mac
+  name: Samsung Galaxy J7
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
+
+phone2:
+  hide_if_away: true
+  icon: mdi:cellphone-android
+  mac: !secret phone2_mac
+  name: Samsung Galaxy Avant
+  picture:
+  track: true
+  vendor: Samsung Electronics Co.,Ltd
 
 ps4:
   hide_if_away: true
@@ -17,14 +80,14 @@ ps4:
   track: true
   vendor: Liteon Technology Corporation
 
-chromecast:
+psvita:
   hide_if_away: true
-  icon: mdi:google-chrome
-  mac: !secret chromecast_mac
-  name: Google Chromecast
+  icon: mdi:playstation
+  mac: !secret psvita_mac
+  name: PlayStation Vita
   picture:
   track: true
-  vendor: Google, Inc.
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
 
 switch:
   hide_if_away: true
@@ -39,52 +102,34 @@ tablet:
   hide_if_away: true
   icon: mdi:tablet-android
   mac: !secret tablet_mac
-  name: Nexus 7
+  name: Asus Nexus 7
   picture:
   track: true
   vendor: ASUSTek COMPUTER INC.
 
-phone:
+wiiu:
   hide_if_away: true
-  icon: mdi:cellphone-android
-  mac: !secret phone_mac
-  name: Samsung Galaxy J7
+  icon: mdi:wiiu
+  mac: !secret wiiu_mac
+  name: Nintendo WiiU
   picture:
   track: true
+  vendor: Nintendo Co., Ltd.
+
+'000000000000':
+  hide_if_away: false
+  icon:
+  mac: 00:00:00:00:00:00
+  name: '000000000000'
+  picture:
+  track: true
+  vendor: XEROX CORPORATION
+
+9cd35b932123:
+  hide_if_away: false
+  icon:
+  mac: 9C:D3:5B:93:21:23
+  name: 9cd35b932123
+  picture:
+  track: false
   vendor: Samsung Electronics Co.,Ltd
-
-laptop:
-  hide_if_away: true
-  icon: mdi:laptop-windows
-  mac: !secret laptop_mac
-  name: Laptop
-  picture:
-  track: true
-  vendor: Hon Hai Precision Ind. Co.,Ltd.
-
-psvita:
-  hide_if_away: true
-  icon: mdi:playstation
-  mac: !secret psvita_mac
-  name: PlayStation Vita
-  picture:
-  track: true
-  vendor: Hon Hai Precision Ind. Co.,Ltd.
-
-new3ds:
-  hide_if_away: true
-  icon: mdi:gamepad-variant
-  mac: !secret new3ds_mac
-  name: New Nintendo 3DS
-  picture:
-  track: true
-  vendor: Nintendo Co., Ltd.
-
-3ds:
-  hide_if_away: true
-  icon: mdi:gamepad-variant
-  mac: !secret 3ds_mac
-  name: Nintendo 3DS
-  picture:
-  track: true
-  vendor: Nintendo Co., Ltd.

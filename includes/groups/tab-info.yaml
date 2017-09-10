@@ -29,16 +29,20 @@ network_speed:
 network_devices:
   name: Network Devices
   entities:
-    - device_tracker.chomecast
-    - device_tracker.phone
-    - device_tracker.switch
-    - device_tracker.tablet
-    - device_tracker.laptop
-    - device_tracker.ps4
-    - device_tracker.3ds
-    - device_tracker.new3ds
-    - device_tracker.psvita
-    - device_tracker.firetv
+    - sensor.network_devices_phone
+    - sensor.network_devices_phone2
+    - sensor.network_devices_tablet
+    - sensor.network_devices_laptop
+    - sensor.network_devices_laptop2
+    - sensor.network_devices_n3ds
+    - sensor.network_devices_new3ds
+    - sensor.network_devices_wiiu
+    - sensor.network_devices_switch
+    - sensor.network_devices_psvita
+    - sensor.network_devices_ps4
+    - sensor.network_devices_amazonfiretv
+    - sensor.network_devices_chromecast
+
 
 system:
   name: System

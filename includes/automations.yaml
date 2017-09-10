@@ -1,1 +1,98 @@
-[]
+- alias: "Low Phone Battery"
+  trigger:
+    platform: state
+    entity_id: sensor.phonebatt
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.phonebatt
+        below: 25
+      - condition: template
+        value_template: '{{ trigger.from_state.state > trigger.to_state.state }}'
+  action:
+    service: notify.discord
+    data_template:
+      {
+        "message": ":battery: Your phone's battery level is at {{ trigger.to_state.state }}%. Time to get charging!",
+        "target": !secret discord_channel
+      }
+
+- alias: "Full Phone Battery"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.phonebatt
+    above: 99
+  action:
+    service: notify.discord
+    data_template:
+      {
+        "message": ":battery: Your phone's battery level is full. Tuturu!",
+        "target": !secret discord_channel
+      }
+
+- alias: "Low Tablet Battery"
+  trigger:
+    platform: state
+    entity_id: sensor.tabletbatt
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.tabletbatt
+        below: 25
+      - condition: template
+        value_template: '{{ trigger.from_state.state > trigger.to_state.state }}'
+  action:
+    service: notify.discord
+    data_template:
+      {
+        "message": ":battery: Your tablet's battery level is at {{ trigger.to_state.state }}%. Time to get charging!",
+        "target": !secret discord_channel
+      }
+
+- alias: "Full Tablet Battery"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.tabletbatt
+    above: 99
+  action:
+    service: notify.discord
+    data_template:
+      {
+        "message": ":battery: Your tablet's battery level is full. Tuturu!",
+        "target": !secret discord_channel
+      }
+
+# Weather Alerts
+# FIR Fire Weather Advisory
+# FLO Flood Warning
+# FOG Dense Fog Advisory
+# HEA Heat Advisory
+# HUR Hurricane Local Statement
+# HWW Hurricane Wind Warning
+# PUB Public Information Statement
+# REC Record Set
+# REP Public Reports
+# SEW Severe Thunderstorm Watch
+# SPE Special Weather Statement
+# SVR Severe Weather Statement
+# TOR Tornado Warning
+# TOW Tornado Watch
+# VOL Volcanic Activity Statement
+# WAT Flood Watch / Statement
+# WIN Winter Weather Advisory
+# WND High Wind Advisory
+# WRN Severe Thunderstorm Warning
+- alias: "Weather Alert"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.pws_alerts
+    above: 0
+  action:
+    service: notify.discord
+    data_template:
+      {
+         "message": ":warning: Current Weather Alerts:\n\n{% if states.sensor.pws_alerts.attributes.Date_FIR %}:fire: {{ states.sensor.pws_alerts.attributes.Description_FIR }}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_FIR }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_FIR }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_FLO %}:ocean: {{ states.sensor.pws_alerts.attributes.Description_FLO }}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_FLO }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_FLO }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_FOG %}:foggy: {{ states.sensor.pws_alerts.attributes.Description_FOG}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_FOG }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_FOG }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_HEA %}:sunny: {{ states.sensor.pws_alerts.attributes.Description_HEA}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_HEA }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_HEA }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_HUR %}:cyclone: {{ states.sensor.pws_alerts.attributes.Description_HUR}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_HUR }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_HUR }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_HWW %}:dash: {{ states.sensor.pws_alerts.attributes.Description_HWW}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_HWW }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_HWW }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_PUB %}:warning: {{ states.sensor.pws_alerts.attributes.Description_PUB}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_PUB }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_PUB }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_REC %}:warning: {{ states.sensor.pws_alerts.attributes.Description_REC}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_REC }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_REC }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_REP %}:warning: {{ states.sensor.pws_alerts.attributes.Description_REP}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_REP }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_REP }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_SEW %}:cloud_lightning: {{ states.sensor.pws_alerts.attributes.Description_SEW}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_SEW }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_SEW }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_SPE %}:warning: {{ states.sensor.pws_alerts.attributes.Description_SPE}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_SPE }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_SPE }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_SVR %}:thunder_cloud_rain: {{ states.sensor.pws_alerts.attributes.Description_SVR}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_SVR }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_SVR }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_TOR %}:cloud_tornado: {{ states.sensor.pws_alerts.attributes.Description_TOR}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_TOR }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_TOR }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_TOW %}:cloud_tornado: {{ states.sensor.pws_alerts.attributes.Description_TOW}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_TOW }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_TOW }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_VOL %}:volcano: {{ states.sensor.pws_alerts.attributes.Description_VOL}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_VOL }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_VOL }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_WAT %}:ocean: {{ states.sensor.pws_alerts.attributes.Description_WAT}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_WAT }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_WAT }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_WIN %}:cloud_snow: {{ states.sensor.pws_alerts.attributes.Description_WIN}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_WIN }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_WIN }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_WND %}:dash: {{ states.sensor.pws_alerts.attributes.Description_WND}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_WND }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_WND }}\n\n{% endif%}{% if states.sensor.pws_alerts.attributes.Date_WRN %}:thunder_cloud_rain: {{ states.sensor.pws_alerts.attributes.Description_WRN}}\nEffective: {{ states.sensor.pws_alerts.attributes.Date_WRN }}\nExpires: {{ states.sensor.pws_alerts.attributes.Expires_WRN }}\n\n{% endif%}Details: https://goo.gl/me5pnr",
+         "target": "340144371120734211"
+       }

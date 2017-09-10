@@ -1,0 +1,31 @@
+default_view:
+  entities:
+  - group.timeanddate
+  - group.devices
+  - group.today
+  - group.threeday
+  name: default_view
+  view: true
+
+info:
+  entities:
+  - group.network_speed
+  - group.system
+  - group.network_devices
+  name: info
+  view: true
+
+network_devices:
+  entities:
+  - device_tracker.phone
+  - device_tracker.laptop
+  - device_tracker.tablet
+  - device_tracker.3ds
+  - device_tracker.new3ds
+  - device_tracker.switch
+  - device_tracker.psvita
+  - device_tracker.ps4
+  - device_tracker.firetv
+  - device_tracker.chomecast
+  name: Network Devices
+  view: false
